@@ -144,11 +144,11 @@ void config(){
 	                      (1 << 12) |
 	                      (1 << 14));
 	    //set PB5 to alternate mode
-	    GPIOB->MODER &= ~(3 << (5 * 2));
-	    GPIOB->MODER |=  (2 << (5 * 2));
+	    GPIOB->MODER &= ~(3 << 10);
+	    GPIOB->MODER |=  (2 << 10);
 	    //select AF2
-	    GPIOB->AFR[0] &= ~(0xF << (5 * 4));
-	    GPIOB->AFR[0] |=  (2 << (5 * 4));
+	    GPIOB->AFR[0] &= ~(0xF << 20);
+	    GPIOB->AFR[0] |=  (2 << 20);
 	    //enable TIM3 clock
 	    RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
 	    //stop timer
